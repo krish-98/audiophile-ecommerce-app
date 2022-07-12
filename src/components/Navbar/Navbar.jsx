@@ -1,10 +1,14 @@
 import React, { useState } from "react"
-import NavbarDropdown from "./NavbarDropdown"
 import Logo from "../../images/logo.svg"
+import NavbarDropdownListItems from "./NavbarDropdownListItems"
 
 import { GiHamburgerMenu } from "react-icons/gi"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import { ImCross } from "react-icons/im"
+
+import M_Headphones from "../../images/dropdown/image-headphones.png"
+import M_Speakers from "../../images/dropdown/image-speakers.png"
+import M_Earphones from "../../images/dropdown/image-earphones.png"
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false)
@@ -28,7 +32,15 @@ const Navbar = () => {
         </div>
 
         {/* Dropdown menu to navigate around different pages on Mobile screen */}
-        <NavbarDropdown toggle={toggle} />
+        <div
+          className={`${
+            !toggle && "hidden"
+          } flex flex-col items-center justify-center gap-16 w-full rounded-b-xl pt-20 pb-10 absolute top-28 left-0 right-0 cursor-pointer sm:flex-row sm:gap-6 sm:px-8`}
+        >
+          <NavbarDropdownListItems image={M_Headphones} text="HEADPHONES" />
+          <NavbarDropdownListItems image={M_Speakers} text="SPEAKERS" />
+          <NavbarDropdownListItems image={M_Earphones} text="EARPHONES" />
+        </div>
 
         <div className="sm:mr-auto sm:mx-12">
           <img className="cursor-pointer" src={Logo} alt="site-logo" />
@@ -43,22 +55,22 @@ const Navbar = () => {
       </div>
 
       {/* For large-screen latop*/}
-      <div className="hidden lg:flex justify-between items-center gap-12 w-[60%] mx-auto my-0">
+      <div className="hidden lg:flex justify-between items-center gap-12 xl:w-[60%] mx-auto my-0">
         <div>
           <img className="cursor-pointer max-w-lg" src={Logo} alt="logo" />
         </div>
 
         <div className="flex justify-center items-center  gap-x-11 font-bold text-sm tracking-widest">
-          <a href="#" className="active:text-orange-400 hover:text-orange-400 ">
+          <a href="/" className="active:text-orange-400 hover:text-orange-400 ">
             HOME
           </a>
-          <a href="#" className="active:text-orange-400 hover:text-orange-400 ">
+          <a href="/" className="active:text-orange-400 hover:text-orange-400 ">
             HEADPHONES
           </a>
-          <a href="#" className="active:text-orange-400 hover:text-orange-400 ">
+          <a href="/" className="active:text-orange-400 hover:text-orange-400 ">
             SPEAKERS
           </a>
-          <a href="#" className="active:text-orange-400 hover:text-orange-400 ">
+          <a href="/" className="active:text-orange-400 hover:text-orange-400 ">
             EARPHONES
           </a>
         </div>
