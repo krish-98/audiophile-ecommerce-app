@@ -14,7 +14,7 @@ const Navbar = () => {
   const [toggle, setToggle] = useState(false)
 
   return (
-    <nav className="px-6 py-7 bg-black text-white relative border-b border-gray-300 w-full">
+    <nav className="px-6 py-7 bg-black text-white relative border-b border-gray-800 w-full">
       {/* From mobile screen to small-screen laptop*/}
       <div className="flex justify-between items-center lg:hidden">
         <div>
@@ -35,7 +35,7 @@ const Navbar = () => {
         <div
           className={`${
             !toggle && "hidden"
-          } flex flex-col items-center justify-center gap-16 w-full rounded-b-xl pt-20 pb-10 absolute top-28 left-0 right-0 cursor-pointer sm:flex-row sm:gap-6 sm:px-8`}
+          } flex flex-col items-center justify-center gap-16 w-full rounded-b-xl pt-20 pb-10 absolute top-20 left-0 right-0 cursor-pointer bg-white sm:flex-row sm:gap-6 sm:px-8`}
         >
           <NavbarDropdownListItems image={M_Headphones} text="HEADPHONES" />
           <NavbarDropdownListItems image={M_Speakers} text="SPEAKERS" />
